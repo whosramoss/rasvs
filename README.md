@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://asvs.whosramoss.com">Check the website</a>
+  <a href="https://rasvs.whosramoss.com">Check the website</a>
 </p>
 <br/><br/>
 
