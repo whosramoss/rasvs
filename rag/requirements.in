@@ -1,0 +1,14 @@
+langchain
+langchain-community
+langchain-huggingface
+langchain-openai
+pandas
+pyyaml
+sentence-transformers
+faiss-cpu
+pymupdf
+python-dotenv
+rank-bm25
+langchain-experimental
+pymilvus
+langchain-milvus
