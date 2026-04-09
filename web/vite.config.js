@@ -17,7 +17,13 @@ function copyLegacyStaticDirs() {
       const src = path.join(srcDir, rel);
       const dest = path.join(outDir, rel);
       if (!fs.existsSync(src)) return;
-      fs.cpSync(src, dest, { recursive: true });
+      fs.cpSync(src, dest, {
+        recursive: true,
+        filter: (srcPath) => {
+          const base = path.basename(srcPath);
+          return base !== "rasvs-animation.js" && base !== "rasvs-background.js";
+        },
+      });
     },
   };
 }
