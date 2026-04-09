@@ -24,7 +24,8 @@ function copyLegacyStaticDirs() {
           return (
             base !== "rasvs-animation.js" &&
             base !== "rasvs-background.js" &&
-            base !== "rasvs-cms.js"
+            base !== "rasvs-cms.js" &&
+            base !== "rasvs-metadata.js"
           );
         },
       });
