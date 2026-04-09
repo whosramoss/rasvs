@@ -1,8 +1,14 @@
 "use strict";
 
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(CustomEase, SplitText, ScrollTrigger);
+
 class RasvsAnimation {
   constructor() {
-    gsap.registerPlugin(CustomEase, SplitText, ScrollTrigger);
 
     this.customEaseIn2 = CustomEase.create(
       "custom-ease-in-2",
@@ -233,9 +239,7 @@ class RasvsAnimation {
         this.initTimberScrollAnimations();
         this.tryInitHeroAfterPreloader();
         requestAnimationFrame(() => {
-          if (window.ScrollTrigger) {
-            window.ScrollTrigger.refresh();
-          }
+          ScrollTrigger.refresh();
         });
       });
     });
