@@ -1,0 +1,57 @@
+{
+  "rasvtopics": [
+    { "label": "Domínio", "value": "Segurança de aplicações" },
+    { "label": "Standard", "value": "OWASP ASVS" },
+    { "label": "Abordagem", "value": "Respostas via RAG" }
+  ],
+  "locale": {
+    "switchToLabel": "View in English",
+    "switchToLocale": "en"
+  },
+  "rasvcontent": [
+    {
+      "title": "RASVS",
+      "body": "RASVS é um sistema RAG (retrieval-augmented generation), alinhado ao padrão ASVS da OWASP. Recupera trechos relevantes do standard normativo e aplica um LLM para explicar e sintetizar com base nessa evidência, de modo que a orientação permaneça ancorada no texto-fonte. O público-alvo inclui engenheiros de segurança, arquitetos e equipes de entrega que aplicam o ASVS em modelagem de ameaças, revisão de arquitetura e design, integração de novos desenvolvedores e preparação de avaliação formal. O sistema reduz latência até orientação alinhada ao standard com citações; prioridades, compensações entre requisitos e aceitação de risco permanecem com partes interessadas humanas."
+    },
+    {
+      "body": "Na ausência de linha de base escrita  de segurança em toda a organização, os resultados de revisão divergem e decisões passam a depender de memória informal. Padrões de verificação codificam prática da comunidade num referencial compartilhado. Após adoção, a fricção operacional concentra-se em volume e densidade de referências cruzadas no documento-fonte. As seções seguintes definem o ASVS, descrevem restrições de operar com corpus normativo extenso na engenharia diária e descrevem como recuperação de informação (retrieval) com ancoragem na fonte (grounding) altera o acesso à informação."
+    },
+    {
+      "title": "OWASP ASVS",
+      "body": "O ASVS (Application Security Verification Standard) da OWASP cataloga requisitos de segurança de aplicações em design, implementação e testes. Equipes utilizam-no para delimitar escopo, comparar maturidade e alinhar comunicação com auditores e product owners mediante definições neutras mantidas pela comunidade, em substituição a listas pontuais e não padronizadas."
+    },
+    {
+      "title": "Navegar um standard normativo extenso",
+      "body": "Quando o ASVS é fonte normativa autoritativa, o texto é extenso e ligado por referências cruzadas. Perguntas cobrem frequentemente múltiplos capítulos; a redação exata influencia arquitetura e provas para auditoria. Busca manual no standard é viável, porém com alta latência e risco de erro sob prazos curtos de revisão."
+    },
+    {
+      "title": "RAG e respostas ancoradas",
+      "body": "RAG combina recuperação léxica ou semântica sobre texto confiável com um LLM. Trechos recuperados são ordenados por relevância antes da geração; o modelo produz explicação condicionada a esse contexto. A saída ancora-se em segmentos do corpus em vez de memória paramétrica opaca, o que favorece rastreabilidade face a normas e regulamentos. Para o ASVS, o objetivo de arquitetura é fidelidade à linguagem oficial de requisitos somada a síntese legível."
+    },
+    {
+      "title": "Supervisão, evolução e contexto",
+      "body": "Modelos de linguagem podem resumir de forma incorreta ou superestimar confiança face ao texto-fonte. Para homologação formal (sign-off) contratual, postura de conformidade ou mapeamento regulatório, a validação deve referir-se ao artefato oficial de publicação do ASVS. O conjunto de versões do standard evolui; sobreposições de política organizacional mantêm-se aplicáveis. RASVS constitui um insumo entre notas de versão, política interna e revisão por pares. O standard publicado permanece âncora normativa; o conjunto de ferramentas operacionaliza regras locais de aplicação."
+    },
+    {
+      "title": "Referências",
+      "body": "As páginas do projeto OWASP e o texto publicado do ASVS permanecem autoritativos para definições, cadeias literais de requisito e registro de mudanças. Devem ser consultados para obter verdade de referência (ground truth) independente de interfaces conversacionais ou ambientes de demonstração."
+    }
+  ],
+  "links": [
+    {
+      "label": "Documentação RASVS",
+      "href": "https://github.com/whosramoss/rasvs",
+      "external": false
+    },
+    {
+      "label": "Documentação OWASP ASVS",
+      "href": "https://owasp.org/www-project-application-security-verification-standard/",
+      "external": true
+    },
+    {
+      "label": "OWASP ASVS no GitHub",
+      "href": "https://github.com/OWASP/ASVS",
+      "external": true
+    }
+  ]
+}

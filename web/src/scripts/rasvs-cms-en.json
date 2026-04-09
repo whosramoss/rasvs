@@ -1,0 +1,57 @@
+{
+  "rasvtopics": [
+    { "label": "Domain", "value": "Application security" },
+    { "label": "Standard", "value": "OWASP ASVS" },
+    { "label": "Approach", "value": "Retrieval-augmented answers" }
+  ],
+  "locale": {
+    "switchToLabel": "View in Portuguese",
+    "switchToLocale": "pt"
+  },
+  "rasvcontent": [
+    {
+      "title": "RASVS",
+      "body": "RASVS is a retrieval-augmented generation (RAG) system aligned with the OWASP Application Security Verification Standard (ASVS). It retrieves relevant passages from the standard, then applies a language model to explain and synthesize from that evidence so that guidance remains anchored in source text. The target audience is security engineers, architects, and delivery teams applying ASVS in threat modeling, design review, developer onboarding, and assessment preparation. The system shortens the path to citation-backed, standard-aligned orientation while ownership of priorities, trade-offs, and risk acceptance remains with human stakeholders."
+    },
+    {
+      "body": "Without a written, organization-wide security baseline, review outcomes diverge and decisions rest on informal recall. Verification standards encode community practice into a shared reference. After adoption, operational friction shifts to navigating volume and cross-reference density in the source document. The following sections define ASVS, describe constraints of working with a large normative corpus in daily engineering work, and outline how retrieval with grounding changes information access."
+    },
+    {
+      "title": "OWASP ASVS",
+      "body": "The OWASP Application Security Verification Standard (ASVS) catalogs application security requirements across design, implementation, and testing. Teams use it to bound scope, compare maturity, and align communication with auditors and product owners using neutral, community-maintained definitions rather than ad hoc bullet lists."
+    },
+    {
+      "title": "Navigating a large standard",
+      "body": "When ASVS is the authoritative source, the text is extensive and cross-linked. Questions frequently span multiple chapters; precise wording affects architecture and audit evidence. Manual search through the standard is feasible but incurs high latency and error risk under time-constrained review."
+    },
+    {
+      "title": "RAG and grounded answers",
+      "body": "Retrieval-augmented generation (RAG) combines lexical or semantic retrieval over trusted text with a large language model. Retrieved passages are ranked first; the model then generates explanation conditioned on that context. Outputs are grounded in corpus segments instead of opaque parametric memory, which supports traceability for standards and regulations. For ASVS, the design target is fidelity to official requirement language plus readable synthesis."
+    },
+    {
+      "title": "Oversight, evolution, and context",
+      "body": "Language models may mis-summarize or overstate confidence relative to source text. For contractual sign-off, compliance posture, or regulatory mapping, validation must reference the official ASVS release artifact. The standard version set evolves; organizational policy overlays still apply. RASVS is one signal alongside release notes, internal policy, and peer review. The published standard remains the normative anchor; tooling operationalizes local application rules."
+    },
+    {
+      "title": "References",
+      "body": "OWASP project pages and the published ASVS text remain authoritative for definitions, requirement strings, and changelog. Consult them for ground truth independent of conversational interfaces or demonstration deployments."
+    }
+  ],
+  "links": [
+    {
+      "label": "RASVS Documentation",
+      "href": "https://github.com/whosramoss/rasvs",
+      "external": false
+    },
+    {
+      "label": "OWASP ASVS Documentation",
+      "href": "https://owasp.org/www-project-application-security-verification-standard/",
+      "external": true
+    },
+    {
+      "label": "OWASP ASVS on GitHub",
+      "href": "https://github.com/OWASP/ASVS",
+      "external": true
+    }
+  ]
+}
