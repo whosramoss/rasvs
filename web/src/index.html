@@ -27,7 +27,23 @@
     <meta name="twitter:image:alt" content="RASVS" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./scripts/rasvs-tailwind-config.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: "#5D3136",
+                cream: "#FFE2C5",
+              },
+            },
+            fontFamily: {
+              sans: ['"Noto Sans"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
 
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/thumbnail.png" />
@@ -107,13 +123,8 @@
         </div>
       </section>
     </div>
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://assets.codepen.io/16327/CustomEase3.min.js"></script>
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="./scripts/rasvs-cms.js"></script>
-    <script src="./scripts/rasvs-animation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="./scripts/rasvs-background.js"></script>
+    <script type="module" src="./scripts/rasvs-cms.js"></script>
+    <script type="module" src="./scripts/rasvs-animation.js"></script>
+    <script type="module" src="./scripts/rasvs-background.js"></script>
   </body>
 </html>
