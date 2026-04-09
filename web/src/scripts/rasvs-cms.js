@@ -1,5 +1,3 @@
-"use strict";
-
 class RasvsCms {
   static LOCALE_STORAGE_KEY = "rasvs-locale";
   static CMS_FALLBACK_PATH = "../data/rasvs-cms-en.json";
@@ -15,21 +13,14 @@ class RasvsCms {
     return "../data/rasvs-cms-en.json";
   }
 
+  /** Resolve against this module so fetch works in dev, production, and after Vite bundling. */
   static resolveFetchUrl(relativePath) {
-    var path = relativePath || RasvsCms.CMS_FALLBACK_PATH;
+    const path = relativePath || RasvsCms.CMS_FALLBACK_PATH;
     try {
-      var el = document.currentScript;
-      if (el && el.src) return new URL(path, el.src).href;
+      return new URL(path, import.meta.url).href;
     } catch (e) {
-      /* ignore */
+      return path;
     }
-    try {
-      var tag = document.querySelector('script[src*="rasvs-cms"]');
-      if (tag && tag.src) return new URL(path, tag.src).href;
-    } catch (e2) {
-      /* ignore */
-    }
-    return path;
   }
 
   constructor() {

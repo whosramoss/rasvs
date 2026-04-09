@@ -21,7 +21,11 @@ function copyLegacyStaticDirs() {
         recursive: true,
         filter: (srcPath) => {
           const base = path.basename(srcPath);
-          return base !== "rasvs-animation.js" && base !== "rasvs-background.js";
+          return (
+            base !== "rasvs-animation.js" &&
+            base !== "rasvs-background.js" &&
+            base !== "rasvs-cms.js"
+          );
         },
       });
 
