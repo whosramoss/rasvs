@@ -1,15 +1,17 @@
 <h1>
-<p align="center">
-  <img src="./web/assets/icon.svg" alt="RASVS logo" width="128">
-  <br>RASVS
-</h1>
   <p align="center">
-    <strong>RASVS</strong> is a <strong>RAG</strong> stack for <strong>OWASP ASVS</strong>:
-    ingest the reference PDF into <strong>Milvus</strong>, answer with <strong>hybrid retrieval</strong>,
-    <strong>Cross-Encoder</strong> re-ranking, and <strong>LLM</strong> generation;
-    optional <strong>LLM-as-a-Judge</strong> for retrieval quality.
-    <br />
-    <a href="#experiment-metadata-current-configuration">Experiment metadata</a>
+    <img src="./web/assets/icon.svg" alt="RASVS logo" width="128">
+     <br>RASVS
+  </p>
+</h1>
+
+<p align="center">
+  <strong>RASVS</strong> is a <strong>RAG</strong> stack for <strong>OWASP ASVS</strong>:
+  ingest the reference PDF into <strong>Milvus</strong>, answer with <strong>hybrid retrieval</strong>,
+  <strong>Cross-Encoder</strong> re-ranking, and <strong>LLM</strong> generation;
+  optional <strong>LLM-as-a-Judge</strong> for retrieval quality.
+  <br /> <br />
+   <a href="#experiment-metadata-current-configuration">Experiment metadata</a>
     ·
     <a href="#core-features">Core features</a>
     ·
@@ -17,9 +19,13 @@
     ·
     <a href="#running-the-cli">Running the CLI</a>
     ·
-    <a href="#advanced-configuration-configyaml">Advanced configuration</a>
-  </p>
+    <a href="#advanced-configuration-ragconfigyaml">Advanced configuration</a>
 </p>
+
+<p align="center">
+  <a href="https://asvs.whosramoss.com">Check the website</a>
+</p>
+<br/><br/>
 
 ## Experiment metadata (current configuration)
 
