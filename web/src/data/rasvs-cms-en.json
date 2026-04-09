@@ -1,6 +1,6 @@
 {
   "rasvtopics": [
-    { "label": "Domain", "value": "Application security" },
+    { "label": "Domain", "value": "https://github.com/whosramoss/rasvs" },
     { "label": "Standard", "value": "OWASP ASVS" },
     { "label": "Approach", "value": "Retrieval-augmented answers" }
   ],

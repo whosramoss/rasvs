@@ -1,6 +1,6 @@
 {
   "rasvtopics": [
-    { "label": "Domínio", "value": "Segurança de aplicações" },
+    { "label": "Projeto", "value": "https://github.com/whosramoss/rasvs" },
     { "label": "Standard", "value": "OWASP ASVS" },
     { "label": "Abordagem", "value": "Respostas via RAG" }
   ],

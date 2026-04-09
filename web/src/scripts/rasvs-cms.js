@@ -57,6 +57,23 @@ class RasvsCms {
 
   static LINKS_ARIA_LABEL = "Project links";
 
+  static toHttpUrl(value) {
+    if (value == null) return null;
+    const trimmed = String(value).trim();
+    if (!trimmed) return null;
+    try {
+      const url = new URL(trimmed);
+      if (url.protocol === "http:" || url.protocol === "https:") {
+        const href = url.href;
+        const text = href.replace(/^https?:\/\//i, "");
+        return { href: href, text: text };
+      }
+    } catch (e) {
+      return null;
+    }
+    return null;
+  }
+
   static normalizePayload(data) {
     if (!data || typeof data !== "object") return null;
     const facts = Array.isArray(data.rasvtopics) ? data.rasvtopics : [];
@@ -111,7 +128,17 @@ class RasvsCms {
       sub.textContent = item.label;
       const p = document.createElement("p");
       p.className = "desc-2 js-anim-item-text";
-      p.textContent = item.value;
+      const maybeUrl = RasvsCms.toHttpUrl(item.value);
+      if (maybeUrl) {
+        const a = document.createElement("a");
+        a.href = maybeUrl.href;
+        a.textContent = maybeUrl.text;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        p.appendChild(a);
+      } else {
+        p.textContent = item.value;
+      }
       row.appendChild(sub);
       row.appendChild(p);
       container.appendChild(row);
