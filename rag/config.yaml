@@ -1,0 +1,68 @@
+# Paths below are relative to the rag/ folder (see rag/app/project_paths.py).
+# --- inputs ---
+data_path: "input/documents/"
+test_set_path: "input/datasets/test_set.csv"
+train_set_path: "input/datasets/train_set.csv"
+validation_set_path: "input/datasets/validation_set.csv"
+
+# --- outputs ---
+results_path: "output/evaluations/evaluation_results.csv"
+embeddings_output_dir: "output/embeddings/"
+parsed_data_path: "output/parsed/parsed_data.json"
+
+experiment_metadata:
+  embedding_model: "local_models/bge-large-en-v1.5"
+  llm_agent: "gpt-4o-mini"
+  llm_judge: "gpt-4o-mini"
+  reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  chunk_method: "recursive"
+  chunk_size: 1000
+  chunk_overlap: 200
+  dataset_train_rows: 0
+  dataset_validation_rows: 0
+  dataset_test_rows: 50
+
+ingestion_strategies:
+  #- id: 1
+  #  chunk_size: 1000
+  #  chunk_overlap: 200
+  #  embedding_model: "all-MiniLM-L6-v2"
+  #- id: 2
+  #  chunk_size: 2000
+  #  chunk_overlap: 400
+  #  embedding_model: "all-mpnet-base-v2"
+  #- id: 3
+  #  chunk_size: 750
+  #  chunk_overlap: 150
+  #  embedding_model: "all-mpnet-base-v2"
+  #- id: 4
+  #  chunk_size: 500
+  #  chunk_overlap: 100
+  #  embedding_model: "all-mpnet-base-v2"
+  #- id: 5
+  #  chunk_size: 750
+  #  chunk_overlap: 150
+  #  embedding_model: "local_models/bge-large-en-v1.5"
+  #- id: 6
+  #  chunk_method: "semantic"
+  #  embedding_model: "local_models/bge-large-en-v1.5"
+  - id: 7
+    partition_name: "strategy_7"
+    chunk_method: "recursive"
+    chunk_size: 1000
+    chunk_overlap: 200
+    embedding_model: "local_models/bge-large-en-v1.5"
+
+evaluator:
+  llm_judge: "gpt-4o-mini"
+  retriever_k: 7
+
+agent:
+  strategy_to_use: 7
+  partition_to_use: "strategy_7"
+  agent_llm: "gpt-4o-mini"
+  retriever_k: 5
+
+retriever_models:
+  default_embedding_fallback: "all-MiniLM-L6-v2"
+  reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
