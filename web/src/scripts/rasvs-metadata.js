@@ -5,7 +5,7 @@ class RasvsMetadata {
   static SITE_URL = "https://rasvs.whosramoss.com";
   static DESCRIPTION =
     "RASVS: RAG focused on OWASP ASVS—cited answers from the standard.";
-  static THUMBNAIL_PATH = "/thumbnail.png";
+  static THUMBNAIL_PATH = "/thumbnail.jpg";
   static BRAND_COLOR = "#5D3136";
   static OG_IMAGE_WIDTH = "526";
   static OG_IMAGE_HEIGHT = "275";
@@ -17,7 +17,6 @@ class RasvsMetadata {
   static LINK_TAGS = [
     { rel: "canonical", href: RasvsMetadata.SITE_URL },
     { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
-    { rel: "apple-touch-icon", href: RasvsMetadata.THUMBNAIL_PATH },
   ];
 
   static META_TAGS = [
@@ -36,6 +35,7 @@ class RasvsMetadata {
     { property: "og:locale", content: "en" },
     { property: "og:url", content: RasvsMetadata.SITE_URL },
     { property: "og:type", content: "website" },
+    { property: "og:image:type", content: "image/jpeg" },
     {
       property: "og:image",
       content: RasvsMetadata.thumbnailAbsoluteUrl(),
@@ -53,29 +53,19 @@ class RasvsMetadata {
       content: RasvsMetadata.OG_IMAGE_HEIGHT,
     },
     { property: "og:image:alt", content: RasvsMetadata.TITLE },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: RasvsMetadata.TITLE },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:title", content: RasvsMetadata.TITLE },
     {
-      name: "twitter:description",
+      property: "twitter:description",
       content: RasvsMetadata.DESCRIPTION,
     },
     {
-      name: "twitter:image",
+      property: "twitter:image",
       content: RasvsMetadata.thumbnailAbsoluteUrl(),
     },
-    {
-      name: "twitter:image:secure_url",
-      content: RasvsMetadata.thumbnailAbsoluteUrl(),
-    },
-    {
-      property: "twitter:image:width",
-      content: RasvsMetadata.OG_IMAGE_WIDTH,
-    },
-    {
-      property: "twitter:image:height",
-      content: RasvsMetadata.OG_IMAGE_HEIGHT,
-    },
-    { name: "twitter:image:alt", content: RasvsMetadata.TITLE },
+
+    { property: "twitter:site", content: RasvsMetadata.SITE_URL },
+    { property: "twitter:image:alt", content: RasvsMetadata.TITLE },
   ];
 
   _upsertMetaTag(def) {
