@@ -2,17 +2,17 @@
 
 class RasvsCms {
   static LOCALE_STORAGE_KEY = "rasvs-locale";
-  static CMS_FALLBACK_PATH = "./rasvs-cms-en.json";
+  static CMS_FALLBACK_PATH = "../data/rasvs-cms-en.json";
 
   static getCmsRelativePath() {
     try {
       if (localStorage.getItem(RasvsCms.LOCALE_STORAGE_KEY) === "pt") {
-        return "./rasvs-cms-pt.json";
+        return "../data/rasvs-cms-pt.json";
       }
     } catch (e) {
       /* ignore */
     }
-    return "./rasvs-cms-en.json";
+    return "../data/rasvs-cms-en.json";
   }
 
   static resolveFetchUrl(relativePath) {

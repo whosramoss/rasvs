@@ -24,6 +24,12 @@ function copyLegacyStaticDirs() {
           return base !== "rasvs-animation.js" && base !== "rasvs-background.js";
         },
       });
+
+      const dataSrc = path.join(srcDir, "data");
+      const dataDest = path.join(outDir, "data");
+      if (fs.existsSync(dataSrc)) {
+        fs.cpSync(dataSrc, dataDest, { recursive: true });
+      }
     },
   };
 }
