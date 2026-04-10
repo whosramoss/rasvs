@@ -1,6 +1,6 @@
 <h1>
   <p align="center">
-    <img src="./web/assets/icon.svg" alt="RASVS logo" width="128">
+    <img src="./web/src/assets/icon.svg" alt="RASVS logo" width="128">
      <br>RASVS
   </p>
 </h1>
