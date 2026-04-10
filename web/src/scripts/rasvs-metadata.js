@@ -1,11 +1,12 @@
-"use strict";
+import iconUrl from "../assets/icon.svg?url";
+import thumbnailUrl from "../assets/thumbnail.jpg?url";
 
 class RasvsMetadata {
   static TITLE = "RASVS";
   static SITE_URL = "https://rasvs.whosramoss.com";
   static DESCRIPTION =
     "RASVS: RAG focused on OWASP ASVS—cited answers from the standard.";
-  static THUMBNAIL_PATH = "/thumbnail.jpg";
+  static THUMBNAIL_PATH = thumbnailUrl;
   static BRAND_COLOR = "#5D3136";
   static OG_IMAGE_WIDTH = "526";
   static OG_IMAGE_HEIGHT = "275";
@@ -14,10 +15,12 @@ class RasvsMetadata {
     return `${RasvsMetadata.SITE_URL}${RasvsMetadata.THUMBNAIL_PATH}`;
   }
 
-  static LINK_TAGS = [
-    { rel: "canonical", href: RasvsMetadata.SITE_URL },
-    { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
-  ];
+  static get LINK_TAGS() {
+    return [
+      { rel: "canonical", href: RasvsMetadata.SITE_URL },
+      { rel: "icon", href: iconUrl, type: "image/svg+xml" },
+    ];
+  }
 
   static META_TAGS = [
     { name: "description", content: RasvsMetadata.DESCRIPTION },

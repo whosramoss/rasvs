@@ -1,30 +1,22 @@
+import cmsEn from "../data/rasvs-cms-en.json";
+import cmsPt from "../data/rasvs-cms-pt.json";
+
 class RasvsCms {
   static LOCALE_STORAGE_KEY = "rasvs-locale";
-  static CMS_FALLBACK_PATH = "../data/rasvs-cms-en.json";
 
-  static getCmsRelativePath() {
+  static getCurrentLocale() {
     try {
       if (localStorage.getItem(RasvsCms.LOCALE_STORAGE_KEY) === "pt") {
-        return "../data/rasvs-cms-pt.json";
+        return "pt";
       }
     } catch (e) {
       /* ignore */
     }
-    return "../data/rasvs-cms-en.json";
+    return "en";
   }
 
-  /** Resolve against this module so fetch works in dev, production, and after Vite bundling. */
-  static resolveFetchUrl(relativePath) {
-    const path = relativePath || RasvsCms.CMS_FALLBACK_PATH;
-    try {
-      return new URL(path, import.meta.url).href;
-    } catch (e) {
-      return path;
-    }
-  }
-
-  constructor() {
-    this.fetchUrl = RasvsCms.resolveFetchUrl(RasvsCms.getCmsRelativePath());
+  static getCmsPayload() {
+    return RasvsCms.getCurrentLocale() === "pt" ? cmsPt : cmsEn;
   }
 
   static splitRasvContentAndLinksLead(raw) {
@@ -219,7 +211,7 @@ class RasvsCms {
     });
   }
 
-  async load() {
+  load() {
     const left = document.querySelector(".hero .text-block .left-container");
     const right = document.querySelector(".hero .text-block .right-container");
     const linksEl = right && right.querySelector(".links");
@@ -227,11 +219,9 @@ class RasvsCms {
 
     let payload;
     try {
-      const res = await fetch(this.fetchUrl, { credentials: "same-origin" });
-      if (!res.ok) throw new Error(res.statusText);
-      payload = await res.json();
+      payload = RasvsCms.getCmsPayload();
     } catch (e) {
-      console.error("[rasvs-cms] Failed to load CMS JSON", e);
+      console.error("[rasvs-cms] Failed to read CMS payload", e);
       left.removeAttribute("aria-busy");
       window.dispatchEvent(
         new CustomEvent("heroCmsError", { detail: { error: e } }),
