@@ -1,28 +1,14 @@
-# Ignore arquivos de ambiente virtual
-venv/
-.venv/
-
-# Ignore arquivos compilados e caches
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Ignore arquivos de configuração do sistema e IDEs
 .env
 .env.*
+!.env.example
 
-# Ignore arquivos de logs e temporários
-vector_stores/
+node_modules/
+dist/
+
 local_models/
 
-# Artefatos grandes gerados (descomente se não quiser versionar)
-# output/parsed/parsed_data.json
-# output/evaluations/evaluation_results.csv
+*.log
+.DS_Store
+Thumbs.db
 
-# Ignore arquivos de configuração do editor
 .vscode/
-
-# Node (site estático em web/)
-web/node_modules/
-web/dist/

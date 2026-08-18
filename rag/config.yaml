@@ -1,4 +1,4 @@
-# Paths below are relative to the rag/ folder (see rag/app/project_paths.py).
+# Paths below are relative to the rag/src/ folder (see src/app/utils/project_paths.ts).
 # --- inputs ---
 data_path: "input/documents/"
 test_set_path: "input/datasets/test_set.csv"
@@ -23,29 +23,6 @@ experiment_metadata:
   dataset_test_rows: 50
 
 ingestion_strategies:
-  #- id: 1
-  #  chunk_size: 1000
-  #  chunk_overlap: 200
-  #  embedding_model: "all-MiniLM-L6-v2"
-  #- id: 2
-  #  chunk_size: 2000
-  #  chunk_overlap: 400
-  #  embedding_model: "all-mpnet-base-v2"
-  #- id: 3
-  #  chunk_size: 750
-  #  chunk_overlap: 150
-  #  embedding_model: "all-mpnet-base-v2"
-  #- id: 4
-  #  chunk_size: 500
-  #  chunk_overlap: 100
-  #  embedding_model: "all-mpnet-base-v2"
-  #- id: 5
-  #  chunk_size: 750
-  #  chunk_overlap: 150
-  #  embedding_model: "local_models/bge-large-en-v1.5"
-  #- id: 6
-  #  chunk_method: "semantic"
-  #  embedding_model: "local_models/bge-large-en-v1.5"
   - id: 7
     partition_name: "strategy_7"
     chunk_method: "recursive"
